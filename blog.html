@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>recordsof.love</title>
+  <link rel="stylesheet" href="./assets/main.css" type="text/css">
+  <meta name="author" content="sarah">
+  <meta name="description" content="more of a messy notebook than a curated blog, actually.">
+</head>
+<body>
+  <div id="tmp">
+    <p>this is a work in progress. please check back later!<br><br><br><br></p>
+    <p>todo...
+    <li>add scan &amp; text content</li>
+    <li>code skeleton layout</li>
+    <li><s>fix overlay orz</s></li> </p>
+  </div>
+  <div class="center">
+    <p style="color:#058530" style="size:20px">welcome to recordsof.love</p>
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+  if (localStorage.getItem("love") == null || (localStorage.getItem("love")).toLowerCase() != "yes") {
+    let reveal = prompt("Do you believe you could love someone if you spent enough time with them?")
+    if (reveal.toLowerCase() == "yes" || reveal.toLowerCase() == "yeah") {
+      localStorage.setItem("love", "yes")
+      alert("I do, too.");
+    } 
+    else if (reveal.toLowerCase() == "maybe" || reveal.toLowerCase() == "idk" || reveal.toLowerCase() == "i don't know" || reveal.toLowerCase() == "i dont know") {
+    window.location.href = "idk"; 
+    }
+    else {
+      jQuery(document).ready(function() {  
+        var overlay = $('<div></div>');  
+        $("body").append(overlay);
+        overlay.fadeIn(2000).addClass('no');
+
+        var overlayText = $('<div>')
+        .html('<p style="font-size:30px;">We&nbsp;may&nbsp;not&nbsp;be right&nbsp;for&nbsp;each&nbspother<i> at&nbsp;this&nbsp;moment</i>.</p>')
+        .addClass('no-text');
+        
+        overlay.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {     
+          $('body').append(overlayText);              
+        });              
+      });   
+    }
+  }
+  </script>
+</html>
