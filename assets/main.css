@@ -82,7 +82,7 @@ a:hover {
 
 /* todo: add HEADER in this section */
 
-/* MAIN content */
+/* MAIN CONTENT */
 main{
   display:flex;
   flex-direction: column;
@@ -103,6 +103,20 @@ main{
   min-height: 150px;
   margin-bottom: 1em;
 }
+@media only screen and (max-width: 600px){
+  #ind a, #ind .box{
+    width: 50%;
+    min-height:100px;
+}}
+@media only screen and (min-width:1280px){
+  #ind a, #ind .box{
+    width: 20%;
+}}
+@media only screen and (min-width:1600px){
+  #ind a, #ind .box{
+    width: 16.66%;
+  }
+}
 #ind .box *{
   margin:0;
   padding:0;
@@ -111,6 +125,7 @@ main{
   position:relative;
   cursor:default;
 }
+/* text formatting */
 #ind .box h2{
   width:90%;
   padding-right:1em;
