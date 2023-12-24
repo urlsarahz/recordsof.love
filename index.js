@@ -8,7 +8,6 @@ function on() {
     document.getElementById("tmpp").style.display="block"; 
   
     var folder = "sky/";
-    var filename;
     $.ajax({
       url: folder,
       success: function (data) {
