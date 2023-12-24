@@ -7,19 +7,19 @@ function on() {
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
     document.getElementById("tmpp").style.display="block"; 
   
-    var folder = "/sky";
+    var folder = "sky/";
+    var regexp = new Regexp("\.png|\.jpg|\.gif");
     $.ajax({
       url : folder,
       success: function (data) {
-          $(data).find("a").attr("href", function (i, val) {
-              if( val.match(/\.(jpg|png|gif)$/) ) { 
-                  $("body").append( "<img src='"+ folder + val +"'>" );
-              }  
-          });
+        $(data).find("a").filter(function () {
+            return regexp.test($(this).text());}).
+            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+            $("body").append("<img src='" + folder + filename + "'>");
       }
-  });
+    });
+}  
 
-   }
   
   
   var canvas = document.getElementById("drawCloud");
