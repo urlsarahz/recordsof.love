@@ -2,31 +2,34 @@
 
 function on() {
     document.getElementById("deadImg").style.display="none"; 
+    document.getElementById("tmppp").style.display="none"; 
       document.getElementById("settings").style.opacity="1"; 
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
-    document.getElementById("form").style.display="block"; 
+    document.getElementById("tmpp").style.display="block"; 
   
-//     var folder = "sky/";
-//     $.ajax({
-//       url : folder,
-//       success: function (data) {
-//           $(data).find("a").attr("href", function (i, val) {
-//               if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-//                   $("body").append( "<img src='"+ folder + val +"'>" );
-//               } 
-//           });
-//       }
-//   });
-fetch('./sky')
-  .then(response => response.json())
-  .then(data => {
-    data.forEach(fileName => {
-      const img = document.createElement('img');
-      img.src = './sky/' + fileName;
-      document.getElementById('image-container').appendChild(img);
-    });
-  })
-  .catch(error => console.error(error));
+    var folder = "sky/";
+    $.get(folder);
+    $.ajax({
+      url : folder,
+      success: function (data) {
+          $(data).find("a").attr("href", function (i, val) {
+              if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                  $("body").append( "<img src='"+ folder + val +"'>" );
+              } 
+          });
+      }
+  });
+
+// fetch('./sky')
+//   .then(response => response.json())
+//   .then(data => {
+//     data.forEach(fileName => {
+//       const img = document.createElement('img');
+//       img.src = './sky/' + fileName;
+//       document.getElementById('image-container').appendChild(img);
+//     });
+//   })
+//   .catch(error => console.error(error));
 
    }
   
@@ -188,7 +191,6 @@ fetch('./sky')
     var id = null;
     clearInterval(id);
     id = setInterval(frame, Math.floor(Math.random()*20)+10);
-    console.log(id);
   
     function frame() {
       if (x == document.body.clientWidth) {
