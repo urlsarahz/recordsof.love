@@ -7,6 +7,7 @@ function on() {
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
     document.getElementById("tmpp").style.display="block"; 
   
+    $(document).ready(function() {
     var folder = "sky/";
     $.ajax({
       url: folder,
@@ -18,6 +19,7 @@ function on() {
         });
     }
     });
+});
 }  
 
 // $.ajax({
