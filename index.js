@@ -8,19 +8,28 @@ function on() {
     document.getElementById("tmpp").style.display="block"; 
   
     var folder = "sky/";
-    var regexp = new Regexp("\.png|\.jpg|\.gif");
+    // var regexp = new Regexp("\.png|\.jpg|\.gif");
     $.ajax({
-      url : folder,
+      url: folder,
       success: function (data) {
         $(data).find("a").filter(function () {
-            return regexp.test($(this).text());}).
-            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+            return regexp.test($(this).text());});
+            var filename = this.href.replace(window.location, "").replace("http://", "");
             $("body").append("<img src='" + folder + filename + "'>");
       }
     });
 }  
 
-  
+// $.ajax({
+//     url : folder,
+//     success: function (data) {
+//         $(data).find("a").attr("href", function (i, val) {
+//             if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+//                 $("body").append( "<img src='"+ folder + val +"'>" );
+//             } 
+//         });
+//     }
+// });
   
   var canvas = document.getElementById("drawCloud");
     var ctx = canvas.getContext("2d");
