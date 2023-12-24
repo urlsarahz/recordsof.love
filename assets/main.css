@@ -1,0 +1,214 @@
+/* TYPOGRAPHY */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZFhjp-Ek-_EeAmM.woff) format('woff');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  
+  :root {
+      --green: #058530;
+      --pink: #FDC4EA;
+      --blue: #1639E9;
+      --white: #FEFBFD;
+      --black: #080206;
+  }
+  
+  ::selection {
+      color: var(--pink);
+      text-shadow: 0 0 5px var(--pink);
+  }
+  body {
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+    background-color:var(--white);
+    font-family: "Inter";
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    color:var(--black);
+    overscroll-behavior: none;
+  }
+  a {
+      color: var(--blue);
+      opacity: 0.8;
+      text-decoration: none;
+  }
+  a:hover {
+      background-color: var(--blue);
+      color: var(--white);
+  }
+  p{
+    font-size:0.9em;
+  }
+  
+  ol{
+    /* list-style-position:inside; */
+    padding-left:1.23em;
+    font-size:0.9em
+  }
+  
+  /* LAYOUT */
+  #page{
+    height:100vh;
+    display:flex;
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+    flex-direction: row;
+    overscroll-behavior:none;
+  }
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center top;
+  }
+  .box::after{
+    display:flex;
+    justify-content: center;
+    padding:1em;
+    content:"⊹ "counter(boxes);
+    font-size: .9em;
+    color: var(--green);
+  }
+  .noscroll{
+    overflow-x:hidden;
+    overflow-y:hidden;
+  }
+  .info {
+    padding: 1em 1.5em 2.5em 1.5em;
+    width:21.5em;
+    min-width:21.5em;
+    background-color: rgb(252, 243, 249);
+    flex: 0 1 auto;
+  }
+  .stuff {
+    /* position:relative; */
+    padding: 1em 1.5em 2.5em 1.5em;
+    flex: 1 1 auto;
+    background-color: var(--blue);
+  }
+  footer {
+    position: fixed;
+    bottom: 0.4em;
+    left: 1.45em;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+    gap: 2em; 
+    z-index: 9999999999999;
+  }
+  footer * {
+    display: inline-block;
+    background: rgb(252, 243, 249);
+    padding: .25em ;
+  }  
+  
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding: 10px; */
+  }
+  
+  /* TOGGLE cool trick! */
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .textt label{
+    background: var(--white);
+    /* padding: 0.1rem 0.2rem; */
+    /* border-radius: 0.1rem; */
+    cursor: pointer;
+    position: relative;
+  }
+  p[toggle]{
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    font-size: 1em;
+    transition: max-height 0.4s ease;
+  }
+  input[type="checkbox"]:checked ~ p {
+    max-height: 80px;
+  }
+  
+  #settings {
+    display:inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap:0.5em;
+  }
+  
+  input[type="range"]{
+    width: 7em;
+    cursor:pointer;
+  }
+  button{
+    border:none;
+    font-family:inherit;
+    font-size: inherit;
+    background-color:  rgb(252, 243, 249);
+    cursor: pointer;
+  }
+  button:hover{
+    color:var(--pink);
+  }
+  
+  #drawCloud {
+    border-radius: 20px;
+    /* background-color: var(--pink); */
+    /* border: 0.5px solid var(--pink); */
+  } 
+  #form{
+    background-color: var(--white);
+    border-radius:1px;
+    border:0.25px solid var(--pink);
+    position:fixed;
+    left:17.5em;
+  }
+  #form:hover{
+    text-shadow: 0 0 5px var(--pink);
+    border:1px solid var(--white);;
+    background-color:rgb(252, 243, 249);
+  }
+  
+  #deadImg{
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+  }
+  
+  .hoverText{
+    position: absolute;
+    display: none;
+    transition: all 0.5s;
+    text-shadow:
+      -1px -1px 0 #fff,
+       0   -1px 0 #fff,
+       1px -1px 0 #fff,
+       1px  0   0 #fff,
+       1px  1px 0 #fff,
+       0    1px 0 #fff,
+      -1px  1px 0 #fff,
+      -1px  0   0 #fff;
+    font-size: 14px;
+    text-align: center;
+  }
+  #deadImg:hover + .hoverText{
+    display: block;
+  }
