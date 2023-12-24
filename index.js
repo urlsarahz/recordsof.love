@@ -10,6 +10,7 @@ function on() {
     var folder = "sky/";
     $.get(folder);
     $.ajax({
+        console.log("hi");
       url : folder,
       success: function (data) {
           $(data).find("a").attr("href", function (i, val) {
