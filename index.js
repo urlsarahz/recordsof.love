@@ -8,13 +8,14 @@ function on() {
     document.getElementById("tmpp").style.display="block"; 
   
     var folder = "sky/";
+    var filename;
     // var regexp = new Regexp("\.png|\.jpg|\.gif");
     $.ajax({
       url: folder,
       success: function (data) {
         $(data).find("a").filter(function () {
             return regexp.test($(this).text());});
-            var filename = this.href.replace(window.location, "").replace("http://", "");
+            filename = this.href.replace(window.location, "").replace("http://", "");
             $("body").append("<img src='" + folder + filename + "'>");
       }
     });
