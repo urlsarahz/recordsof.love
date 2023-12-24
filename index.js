@@ -7,12 +7,12 @@ function on() {
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
     document.getElementById("tmpp").style.display="block"; 
   
-    var folder = "sky/";
+    var folder = "/sky";
     $.ajax({
       url : folder,
       success: function (data) {
           $(data).find("a").attr("href", function (i, val) {
-              if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+              if( val.match(/\.(jpg|png|gif)$/) ) { 
                   $("body").append( "<img src='"+ folder + val +"'>" );
               }  
           });
