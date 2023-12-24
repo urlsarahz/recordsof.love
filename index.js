@@ -6,17 +6,28 @@ function on() {
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
     document.getElementById("form").style.display="block"; 
   
-    var folder = "sky/";
-    $.ajax({
-      url : folder,
-      success: function (data) {
-          $(data).find("a").attr("href", function (i, val) {
-              if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                  $("body").append( "<img src='"+ folder + val +"'>" );
-              } 
-          });
-      }
-  });
+//     var folder = "sky/";
+//     $.ajax({
+//       url : folder,
+//       success: function (data) {
+//           $(data).find("a").attr("href", function (i, val) {
+//               if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+//                   $("body").append( "<img src='"+ folder + val +"'>" );
+//               } 
+//           });
+//       }
+//   });
+fetch('./sky')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(fileName => {
+      const img = document.createElement('img');
+      img.src = './sky/' + fileName;
+      document.getElementById('image-container').appendChild(img);
+    });
+  })
+  .catch(error => console.error(error));
+
    }
   
   
