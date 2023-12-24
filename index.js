@@ -13,11 +13,12 @@ function on() {
     $.ajax({
       url: folder,
       success: function (data) {
-        $(data).find("a").filter(function () {
-            return regexp.test($(this).text());});
-            filename = this.href.replace(window.location, "").replace("http://", "");
-            $("body").append("<img src='" + folder + filename + "'>");
-      }
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                $("body").append( "<img src='"+ folder + val +"'>" );
+            } 
+        });
+    }
     });
 }  
 
