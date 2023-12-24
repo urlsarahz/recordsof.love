@@ -19,17 +19,6 @@ function on() {
       }
   });
 
-// fetch('./sky')
-//   .then(response => response.json())
-//   .then(data => {
-//     data.forEach(fileName => {
-//       const img = document.createElement('img');
-//       img.src = './sky/' + fileName;
-//       document.getElementById('image-container').appendChild(img);
-//     });
-//   })
-//   .catch(error => console.error(error));
-
    }
   
   
