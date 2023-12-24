@@ -9,7 +9,7 @@ function on() {
   
     var folder = "sky/";
     var filename;
-    // var regexp = new Regexp("\.png|\.jpg|\.gif");
+    var regexp = new Regexp("\.png|\.jpg|\.gif");
     $.ajax({
       url: folder,
       success: function (data) {
