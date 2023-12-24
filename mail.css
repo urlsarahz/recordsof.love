@@ -1,0 +1,56 @@
+* {
+    padding:0;
+    margin:0;
+}
+body {
+    height:100%;
+    overflow:hidden;
+    background-color: #F0DBEC;
+}
+.mail {
+    height:100%;
+    display:flex;
+}
+
+#send {
+    position:absolute;
+    bottom:0;
+    right:0;
+    background-color:#c0d8c4;
+    padding:0.5em;
+}
+.tool {
+    /* background-color: #4e7e6f; */
+    /* border: none; */
+    /* border-radius: 4px; */
+    color:#c0d8c4;
+    padding: 2px;
+    /* padding:0.5em; */
+    width:100px;
+    text-align:center;
+    vertical-align: center;
+    display: inline-block;
+}
+#toolbar{
+    position:absolute;
+    right:0;
+    top:0;
+    /* display:inline-grid;
+    grid-template-columns: auto auto auto; */
+    display:flex;
+    flex-direction:row;
+    padding:0.5em;
+    width:300px;
+    height:50px;
+    background-color:#c5a0ac;
+}
+#toolbar input {
+    width: 80%;
+
+}
+#clear {
+    cursor:default;
+}
+#typewriter {
+    cursor:default
+}
