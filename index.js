@@ -9,12 +9,13 @@ function on() {
   
     $(document).ready(function() {
     var folder = "sky/";
+    alert(folder);
     $.ajax({
       url: folder,
       success: function (data) {
         $(data).find("a").attr("href", function (i, val) {
             if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                alert("good");
+                alert(val);
                 $("body").append( "<img src='"+ folder + val +"'>" );
             } 
         });
