@@ -9,10 +9,10 @@ function on() {
   
     $(document).ready(function() {
     var folder = "sky/";
-    alert(folder);
     $.ajax({
       url: folder,
       success: function (data) {
+        alert(folder);
         $(data).find("a").attr("href", function (i, val) {
             if( val.match(/\.(jpe?g|png|gif)$/) ) { 
                 alert(val);
