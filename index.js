@@ -12,8 +12,9 @@ function on() {
     $.ajax({
       url: folder,
       success: function (data) {
-        alert(folder);
+        alert(data);
         $(data).find("a").attr("href", function (i, val) {
+            alert("i," + val);
             if( val.match(/\.(jpe?g|png|gif)$/) ) { 
                 alert(val);
                 $("body").append( "<img src='"+ folder + val +"'>" );
@@ -204,5 +205,7 @@ function on() {
     }
   }
   
-  
+
+    // $('.typew').fadeOut(20000); 
+
   
