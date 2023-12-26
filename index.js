@@ -14,7 +14,6 @@ function on() {
       success: function (data) {
         alert(data);
         $(data).find("a").attr("href", function (i, xyz) {
-            alert("i," + xyz);
             if( xyz.match(/\.(jpe?g|png|gif)$/) ) { 
                 alert(xyz);
                 $("body").append( "<img src='"+ folder + xyz +"'>" );
