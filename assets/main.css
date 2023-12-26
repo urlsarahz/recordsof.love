@@ -213,23 +213,22 @@
     display: block;
   } 
 
- #type{
-    
+ .typew{
     margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
+    border-right: .15em solid rgba(255,255,255,.75);
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    /* transform: translateY(-50%);  */
+    width: auto;
 
     animation: typewriter 4s steps(44) 1s 1 normal both,
              blinkTextCursor 500ms steps(44) infinite normal;
 }
 @keyframes typewriter{
-  from{width: 0;}
-  to{width: 24em;}
+    from{max-width: 0;}
+    to{max-width: 100%;}
 }
 @keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
   }
