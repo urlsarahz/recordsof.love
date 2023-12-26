@@ -13,11 +13,11 @@ function on() {
       url: folder,
       success: function (data) {
         alert(data);
-        $(data).find("a").attr("href", function (i, val) {
-            alert("i," + val);
-            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                alert(val);
-                $("body").append( "<img src='"+ folder + val +"'>" );
+        $(data).find("a").attr("href", function (i, xyz) {
+            alert("i," + xyz);
+            if( xyz.match(/\.(jpe?g|png|gif)$/) ) { 
+                alert(xyz);
+                $("body").append( "<img src='"+ folder + xyz +"'>" );
             } 
         });
     }
