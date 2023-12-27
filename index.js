@@ -8,7 +8,7 @@ function on() {
     document.getElementById("tmpp").style.display="block"; 
   
     $(document).ready(function() {
-    var folder = "sky";
+    var folder = location.host + "/sky";
     $.ajax({
       url: folder,
       type: 'Get',
