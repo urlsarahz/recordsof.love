@@ -17,18 +17,18 @@ function on() {
 
     // DOESNT WORK WHY WHY WHY
     $(document).ready(function() {
-    var folder = "sky/sky.json/";
+    var path = "sky/sky.json/";
     $.ajax({
-      url: folder,
+      url: path,
       type: 'Get',
       async: false,
       cache: false,
       success: function (data) {
         alert(data);
 
-        $(data).find("a:contains(.jpg)").each(function () {
+        $(data).find("a:contains(.JPG)").each(function () {
             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
-            $("body").append($("<img src=" + folder + filename + "></img>"));
+            $("body").append($("<img src=" + path + filename + "></img>"));
         });
     },
     error: function (xhr, ajaxOptions, thrownError) {
