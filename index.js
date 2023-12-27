@@ -6,37 +6,33 @@ function on() {
       document.getElementById("settings").style.opacity="1"; 
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
     document.getElementById("tmpp").style.display="block"; 
-    
-    // clouds = [];
-    // $.get('sky/', function (clouds) {
-    //     alert(clouds);
-    //     let w = $(`<div class='cloud' index='` + cloud.id + `'>
-    //     <img src="` + cloud.cloud.path.slice(7) + `">
-    //   </div>`);
-    // });
 
-    // DOESNT WORK WHY WHY WHY
-    $(document).ready(function() {
-    var path = "sky.json/";
-    $.ajax({
-      url: path,
-      type: 'Get',
-      async: false,
-      cache: false,
-      success: function (data) {
-        alert(data);
-
-        $(data).find("a:contains(.JPG)").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http:///","");               
-            $("body").append($("<img src= sky/" + filename + "></img>"));
-        });
-    },
-    error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
+    let imgPaths = loadJSON("./sky.json")
+    for (let i=1; i<2; i++) {
+        let filename = imgPaths[imgPaths.length-i];
+        alert(filename);
+        $("body").append($("<img src=" + filename + "></img>"))
     }
-    });
-});
+
+//     var path = "sky.json/";
+//     $.ajax({
+//       url: path,
+//       type: 'Get',
+//       async: false,
+//       cache: false,
+//       success: function (data) {
+//         alert(data);
+
+//         $(data).find("a:contains(.JPG)").each(function () {
+//             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
+//             $("body").append($("<img src= sky/" + filename + "></img>"));
+//         });
+//     },
+//     error: function (xhr, ajaxOptions, thrownError) {
+//         alert(xhr.status);
+//         alert(thrownError);
+//     }
+//     });
 }  
   
   var canvas = document.getElementById("drawCloud");
