@@ -24,7 +24,8 @@ var path = "sky/";
       success: function (data) {
         console.log(data);
         $(data).find("a:contains(.JPG)").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http:///","");               
+            var filename = this.href.replace(window.location.host, "").replace("http:///","");   
+            console.log(filename);             
             let pic = $("<img src= sky/" + filename + "></img>");
             pic.css("max-height", 10 + "em").css("width", "auto").appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
         });
