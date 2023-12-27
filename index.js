@@ -14,23 +14,6 @@ function on() {
     //     $("body").append($("<img src=" + filename + "></img>"))
     // }
 }  
-
-var path = "sky/";
-    $.ajax({
-      url: path,
-      type: 'Get',
-      async: false,
-      cache: false,
-      success: function (data) {
-        console.log(data);
-        $(data).find("a:contains(.JPG)").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http:///","");   
-            console.log(filename);             
-            let pic = $("<img src= sky/" + filename + "></img>");
-            pic.css("max-height", 10 + "em").css("width", "auto").appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
-        });
-    },
-    });
   
   var canvas = document.getElementById("drawCloud");
     var ctx = canvas.getContext("2d");
@@ -114,10 +97,12 @@ var path = "sky/";
       oc.stroke();
   
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.globalAlpha = 1;
+      ctx.globalAlpha = 0.8;
       ctx.drawImage(freezeCanvas, 0, 0);
       ctx.globalAlpha = opacity;
-      ctx.filter = "blur(5px)";
+      ctx.filter = "blur(2px)";
+      ctx.shadowColor = "rgba(252,243,249,0.5)";
+      ctx.shadowBlur = 10;
       ctx.drawImage(offscreenCanvas, 0, 0);
     }
   
@@ -172,6 +157,24 @@ var path = "sky/";
     document.getElementById("form").style.display="none";
   
     loadCloud();
+
+    // ADD PICS
+    var path = "sky/";
+    $.ajax({
+      url: path,
+      type: 'Get',
+      async: false,
+      cache: false,
+      success: function (data) {
+        console.log(data);
+        $(data).find("a:contains(.JPG)").each(function () {
+            var filename = this.href.replace(window.location.host, "").replace("http:///","");   
+            console.log(filename);             
+            let pic = $("<img src= sky/" + filename + "></img>");
+            pic.css("max-height", 10 + "em").css("width", "auto").appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
+        });
+    },
+    });
     }
   
     function loadCloud() {

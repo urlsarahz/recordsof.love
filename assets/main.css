@@ -1,12 +1,12 @@
 /* TYPOGRAPHY */
-@font-face {
+/* @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZFhjp-Ek-_EeAmM.woff) format('woff');
     unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
+  } */
   
   :root {
       --green: #058530;
@@ -26,7 +26,8 @@
     height:100%;
     width:100%;
     background-color:var(--white);
-    font-family: "Inter";
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
     text-rendering: optimizeLegibility;
     font-size: 16px;
     color:var(--black);
@@ -172,6 +173,7 @@
     border-radius: 20px;
     /* background-color: var(--pink); */
     /* border: 0.5px solid var(--pink); */
+    /* filter:blur(30px); */
   } 
   #form{
     background-color: var(--white);
