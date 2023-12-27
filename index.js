@@ -17,7 +17,7 @@ function on() {
 
     // DOESNT WORK WHY WHY WHY
     $(document).ready(function() {
-    var folder = "sky/sky/";
+    var folder = "sky/sky.json/";
     $.ajax({
       url: folder,
       type: 'Get',
