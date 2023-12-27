@@ -6,40 +6,34 @@ function on() {
       document.getElementById("settings").style.opacity="1"; 
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
     document.getElementById("tmpp").style.display="block"; 
-  
-    $(document).ready(function() {
-    var folder = "sky/";
-    $.ajax({
-      url: folder,
-      type: 'Get',
-      async: false,
-      cache: false,
-      success: function (data) {
-        alert(data);
-
-        $(data).find("a:contains(.jpg)").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http:///","");               
-            $("body").append($("<img src=" + folder + filename + "></img>"));
-        });
-    },
-    error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
-    }
+    
+    clouds = [];
+    $.get('sky/', function (clouds) {
+        alert(clouds);
     });
-});
-}  
+    // DOESNT WORK WHY WHY WHY
+//     $(document).ready(function() {
+//     var folder = "sky/";
+//     $.ajax({
+//       url: folder,
+//       type: 'Get',
+//       async: false,
+//       cache: false,
+//       success: function (data) {
+//         alert(data);
 
-// $.ajax({
-//     url : folder,
-//     success: function (data) {
-//         $(data).find("a").attr("href", function (i, val) {
-//             if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-//                 $("body").append( "<img src='"+ folder + val +"'>" );
-//             } 
+//         $(data).find("a:contains(.jpg)").each(function () {
+//             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
+//             $("body").append($("<img src=" + folder + filename + "></img>"));
 //         });
+//     },
+//     error: function (xhr, ajaxOptions, thrownError) {
+//         alert(xhr.status);
+//         alert(thrownError);
 //     }
+//     });
 // });
+}  
   
   var canvas = document.getElementById("drawCloud");
     var ctx = canvas.getContext("2d");
