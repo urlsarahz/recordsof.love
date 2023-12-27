@@ -22,11 +22,11 @@ var path = "sky/";
       async: false,
       cache: false,
       success: function (data) {
-
+        console.log(data);
         $(data).find("a:contains(.JPG)").each(function () {
             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
             let pic = $("<img src= sky/" + filename + "></img>");
-            pic.css("max-height", 25 + "em").css("width", "auto").appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
+            pic.css("max-height", 10 + "em").css("width", "auto").appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
         });
     },
     });
