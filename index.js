@@ -13,28 +13,23 @@ function on() {
     //     alert(filename);
     //     $("body").append($("<img src=" + filename + "></img>"))
     // }
+}  
 
-    var path = "sky/";
+var path = "sky/";
     $.ajax({
       url: path,
       type: 'Get',
       async: false,
       cache: false,
       success: function (data) {
-        alert(data);
 
         $(data).find("a:contains(.JPG)").each(function () {
             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
             let pic = $("<img src= sky/" + filename + "></img>");
-            pic.appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
+            pic.css("max-height", 25 + "em").css("width", "auto").appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
         });
     },
-    error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
-    }
     });
-}  
   
   var canvas = document.getElementById("drawCloud");
     var ctx = canvas.getContext("2d");
