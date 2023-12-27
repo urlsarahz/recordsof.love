@@ -7,32 +7,33 @@ function on() {
     document.getElementById("drawCloud").style.backgroundColor="var(--pink)"; 
     document.getElementById("tmpp").style.display="block"; 
 
-    let imgPaths = loadJSON("./sky.json")
-    for (let i=1; i<2; i++) {
-        let filename = imgPaths[imgPaths.length-i];
-        alert(filename);
-        $("body").append($("<img src=" + filename + "></img>"))
+    // let imgPaths = loadJSON("./sky.json")
+    // for (let i=1; i<2; i++) {
+    //     let filename = imgPaths[imgPaths.length-i];
+    //     alert(filename);
+    //     $("body").append($("<img src=" + filename + "></img>"))
+    // }
+
+    var path = "sky/";
+    $.ajax({
+      url: path,
+      type: 'Get',
+      async: false,
+      cache: false,
+      success: function (data) {
+        alert(data);
+
+        $(data).find("a:contains(.JPG)").each(function () {
+            var filename = this.href.replace(window.location.host, "").replace("http:///","");               
+            let pic = $("<img src= sky/" + filename + "></img>");
+            pic.appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
+        });
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
     }
-
-//     var path = "sky.json/";
-//     $.ajax({
-//       url: path,
-//       type: 'Get',
-//       async: false,
-//       cache: false,
-//       success: function (data) {
-//         alert(data);
-
-//         $(data).find("a:contains(.JPG)").each(function () {
-//             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
-//             $("body").append($("<img src= sky/" + filename + "></img>"));
-//         });
-//     },
-//     error: function (xhr, ajaxOptions, thrownError) {
-//         alert(xhr.status);
-//         alert(thrownError);
-//     }
-//     });
+    });
 }  
   
   var canvas = document.getElementById("drawCloud");
