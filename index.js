@@ -17,7 +17,7 @@ function on() {
 
     // DOESNT WORK WHY WHY WHY
     $(document).ready(function() {
-    var path = "sky/sky.json/";
+    var path = "sky.json/";
     $.ajax({
       url: path,
       type: 'Get',
@@ -28,7 +28,7 @@ function on() {
 
         $(data).find("a:contains(.JPG)").each(function () {
             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
-            $("body").append($("<img src=" + path + filename + "></img>"));
+            $("body").append($("<img src= sky/" + filename + "></img>"));
         });
     },
     error: function (xhr, ajaxOptions, thrownError) {
