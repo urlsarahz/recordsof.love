@@ -8,15 +8,23 @@ function on() {
     document.getElementById("tmpp").style.display="block"; 
   
     $(document).ready(function() {
-    var folder = "sky";
+    var folder = "sky/";
     $.ajax({
       url: folder,
+      type: 'Get',
+      async: false,
+      cache: false,
       success: function (data) {
         alert(data);
+
         $(data).find("a:contains(.jpg)").each(function () {
             var filename = this.href.replace(window.location.host, "").replace("http:///","");               
             $("body").append($("<img src=" + folder + filename + "></img>"));
         });
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
     }
     });
 });
