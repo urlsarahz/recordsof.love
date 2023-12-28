@@ -88,11 +88,12 @@
     background-color: rgb(252, 243, 249);
     flex: 0 1 auto;
   }
-  .stuff {
-    /* position:relative; */
+  #stuff {
+    position:relative;
     padding: 1em 1.5em 2.5em 1.5em;
     flex: 1 1 auto;
     background-color: var(--blue);
+    overflow: hidden;
   }
   footer {
     position: fixed;
@@ -152,6 +153,7 @@
     flex-direction: row;
     align-items: center;
     gap:0.5em;
+    margin: auto;
   }
   
   input[type="range"]{

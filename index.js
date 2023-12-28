@@ -157,24 +157,7 @@ function on() {
     document.getElementById("form").style.display="none";
   
     loadCloud();
-
-    // ADD PICS
-    var path = "sky/";
-    $.ajax({
-      url: path,
-      type: 'Get',
-      async: false,
-      cache: false,
-      success: function (data) {
-        console.log(data);
-        $(data).find("a:contains(.JPG)").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http:///","");   
-            console.log(filename);             
-            let pic = $("<img src= sky/" + filename + "></img>");
-            pic.css("max-height", 10 + "em").css("width", "auto").appendTo(".stuff").hide().fadeIn( Math.floor(Math.random()*20)+5);
-        });
-    },
-    });
+    loadPics();
     }
   
     function loadCloud() {
@@ -182,7 +165,7 @@ function on() {
     var dataURL = localStorage.getItem('newCloud');
     ccloud = document.getElementById('userCloud');
     ccloud.src = dataURL;
-    ccloud.style.top = (document.body.clientHeight - ccloud.height) * Math.random();
+    ccloud.style.top = (document.body.clientHeight - ccloud.height - 20) * Math.random() + "px";
     ccloud.style.left = 50;
     // ccloud.style.display="block";
   
@@ -204,6 +187,29 @@ function on() {
     }
   }
   
+  function loadPics() {
+    var path = "sky/";
+    $.ajax({
+      url: path,
+      type: 'Get',
+      async: false,
+      cache: false,
+      success: function (data) {
+        console.log(data);
+        $(data).find("a:contains(.JPG)").each(function () {
+            var filename = this.href.replace(window.location.host, "").replace("http:///","");   
+            console.log(filename);             
+            let pic = $("<img src= sky/" + filename + "></img>");
+
+            let sky = document.getElementById("stuff");
+            let _left = Math.random()*sky.offsetWidth;
+            let _top = Math.floor(Math.random()*sky.offsetHeight);
+            let _size = Math.floor(Math.random()*10)+5;
+            pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
+        });
+    },
+    });
+  }
 
     // $('.typew').fadeOut(20000); 
 
