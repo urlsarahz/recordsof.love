@@ -165,12 +165,12 @@ function on() {
     var dataURL = localStorage.getItem('newCloud');
     ccloud = document.getElementById('userCloud');
     ccloud.src = dataURL;
-    ccloud.style.top = (document.body.clientHeight - ccloud.height - 20) * Math.random() + "px";
+    ccloud.style.position = 'absolute';
+    ccloud.style.top = (document.body.clientHeight - ccloud.height - 50) * Math.random() + "px";
     ccloud.style.left = 50;
     // ccloud.style.display="block";
   
-    // CLOUD POSITION and MOVE
-    ccloud.style.position = 'absolute';
+    // MOVE
     var x = 50;
     var id = null;
     clearInterval(id);
