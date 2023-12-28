@@ -101,8 +101,8 @@ function on() {
       ctx.drawImage(freezeCanvas, 0, 0);
       ctx.globalAlpha = opacity;
       ctx.filter = "blur(2px)";
-      ctx.shadowColor = "rgba(252,243,249,0.5)";
-      ctx.shadowBlur = 10;
+      ctx.shadowColor = "rgba(252,243,249,0.3)";
+      ctx.shadowBlur = 7;
       ctx.drawImage(offscreenCanvas, 0, 0);
     }
   
