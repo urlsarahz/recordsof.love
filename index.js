@@ -189,26 +189,34 @@ function on() {
   
   function loadPics() {
     var path = "sky/";
-    $.ajax({
-      url: path,
-      type: 'Get',
-      async: false,
-      cache: false,
-      success: function (data) {
-        console.log(data);
-        $(data).find("a:contains(.JPG)").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http:///","");   
-            console.log(filename);             
-            let pic = $("<img src= sky/" + filename + "></img>");
+    // $.ajax({
+    //   url: path,
+    //   type: 'Get',
+    //   async: false,
+    //   cache: false,
+    //   success: function (data) {
+    //     console.log(data);
+    //     $(data).find("a:contains(.JPG)").each(function () {
+    //         var filename = this.href.replace(window.location.host, "").replace("http:///","");   
+    //         console.log(filename);             
+    //         let pic = $("<img src= sky/" + filename + "></img>");
 
-            let sky = document.getElementById("stuff");
-            let _left = Math.random()*sky.offsetWidth;
-            let _top = Math.floor(Math.random()*sky.offsetHeight);
-            let _size = Math.floor(Math.random()*10)+5;
-            pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
+    //         let sky = document.getElementById("stuff");
+    //         let _left = Math.random()*sky.offsetWidth;
+    //         let _top = Math.floor(Math.random()*sky.offsetHeight);
+    //         let _size = Math.floor(Math.random()*10)+5;
+    //         pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
+    //     });
+    // },
+    // });
+    $.get( "sky/", function( data ) {
+        var items = [];
+        $.each( data, function(val ) {
+          items.push(val);
         });
-    },
-    });
+      
+        $( "#stuff" ).append( items );
+      });
   }
 
     // $('.typew').fadeOut(20000); 
