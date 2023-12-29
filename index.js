@@ -188,36 +188,50 @@ function on() {
   }
   
   function loadPics() {
-    var path = "sky/";
-    // $.ajax({
-    //   url: path,
-    //   type: 'Get',
-    //   async: false,
-    //   cache: false,
-    //   success: function (data) {
-    //     console.log(data);
-    //     $(data).find("a:contains(.JPG)").each(function () {
-    //         var filename = this.href.replace(window.location.host, "").replace("http:///","");   
-    //         console.log(filename);             
-    //         let pic = $("<img src= sky/" + filename + "></img>");
+    var path = "sky/pics.json";
+    $.ajax({
+      url: path,
+      type: 'Get',
+      async: false,
+      cache: false,
+      success: function (data) {
+        // var pics = [];
+        // console.log(data);
 
-    //         let sky = document.getElementById("stuff");
-    //         let _left = Math.random()*sky.offsetWidth;
-    //         let _top = Math.floor(Math.random()*sky.offsetHeight);
-    //         let _size = Math.floor(Math.random()*10)+5;
-    //         pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
-    //     });
-    // },
-    // });
-    $.get( "sky/", function( data ) {
-        var items = [];
-        $.each( data, function(val ) {
-          items.push(val);
-        });
+        $.each(data, function(val){
+            // console.log(data[val]);
+            let pic = $("<img src= sky/" + data[val] + "></img>");
+
+            let sky = document.getElementById("stuff");
+            let _left = Math.random()*sky.offsetWidth;
+            let _top = Math.floor(Math.random()*sky.offsetHeight);
+            let _size = Math.floor(Math.random()*10)+5;
+            pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
+        })
+
+
+        // $(data).find("a:contains(.JPG)").each(function () {
+        //     var filename = this.href.replace(window.location.host, "").replace("http:///","");   
+        //     console.log(filename);             
+        //     let pic = $("<img src= sky/" + filename + "></img>");
+
+            // let sky = document.getElementById("stuff");
+            // let _left = Math.random()*sky.offsetWidth;
+            // let _top = Math.floor(Math.random()*sky.offsetHeight);
+            // let _size = Math.floor(Math.random()*10)+5;
+            // pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
+        // });
+    },
+    });
+//     $.get( "sky/", function( data ) {
+//         var items = [];
+//         $.each( data, function(val ) {
+//           items.push(val);
+//         });
       
-        $( "#stuff" ).append( items );
-      });
-  }
+//         $( "#stuff" ).append( items );
+//       });
+   }
 
     // $('.typew').fadeOut(20000); 
 
