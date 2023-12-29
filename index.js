@@ -166,7 +166,7 @@ function on() {
     ccloud = document.getElementById('userCloud');
     ccloud.src = dataURL;
     ccloud.style.position = 'absolute';
-    ccloud.style.top = (document.body.clientHeight - ccloud.height - 50) * Math.random() + "px";
+    ccloud.style.top = (document.body.clientHeight - ccloud.height - 200) * Math.random() + "px";
     ccloud.style.left = 50;
     // ccloud.style.display="block";
   
