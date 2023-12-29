@@ -59,10 +59,10 @@ function on() {
       }  
   });
   
-  
   canvas.addEventListener('mousedown', startPainting);
   canvas.addEventListener('mouseup', stopPainting);
   canvas.addEventListener('mousemove', sketch);
+
   
   var mouse = {x:0,y:0}; 
   let paint = false;
@@ -235,4 +235,9 @@ function on() {
 
     // $('.typew').fadeOut(20000); 
 
+    $(window).on('load resize',function(){
+        if($(window).width() < 950){
+            window.location = "https://recordsof.love/home";
+        }
+    });
   
