@@ -206,7 +206,7 @@ function on() {
             let _left = Math.random()*sky.offsetWidth;
             let _top = Math.floor(Math.random()*sky.offsetHeight);
             let _size = Math.floor(Math.random()*30)+10;
-            pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
+            pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff").draggable();
         })
 
 
