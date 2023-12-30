@@ -208,8 +208,6 @@ function on() {
             let _size = Math.floor(Math.random()*15)+5;
             pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff").draggable();
         })
-
-
     },
     });
 //     $.get( "sky/", function( data ) {
