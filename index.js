@@ -241,3 +241,20 @@ function on() {
         }
     });
   
+
+// wave gif
+function appear(event, querySelector) {
+  const element = document.querySelector(querySelector);
+  element.classList.add("visible");
+}
+
+function cursorMove(event, querySelector) {
+  const element = document.querySelector(querySelector);
+  element.style.top = `${event.clientY}px`;
+  element.style.left = `${event.clientX}px`;
+}
+
+function disappear(event, querySelector) {
+  const element = document.querySelector(querySelector);
+  element.classList.remove("visible");
+}

@@ -69,14 +69,14 @@
     object-fit: contain;
     object-position: center top;
   }
-  .box::after{
+  /* .box::after{
     display:flex;
     justify-content: center;
     padding:1em;
     content:"⊹ "counter(boxes);
     font-size: .9em;
     color: var(--green);
-  }
+  } */
   .noscroll{
     overflow-x:hidden;
     overflow-y:hidden;
@@ -124,7 +124,7 @@
     /* padding: 10px; */
   }
   
-  /* TOGGLE cool trick! */
+  /* TOGGLE TRICK */
   input[type="checkbox"] {
     position: absolute;
     opacity: 0;
@@ -148,6 +148,7 @@
     max-height: 80px;
   }
   
+  /* CANVAS */
   #settings {
     display:inline-flex;
     flex-direction: row;
@@ -177,6 +178,8 @@
     /* border: 0.5px solid var(--pink); */
     /* filter:blur(30px); */
   } 
+
+  /* form cloud button */
   #form{
     background-color: var(--white);
     border-radius:1px;
@@ -190,6 +193,7 @@
     background-color:rgb(252, 243, 249);
   }
   
+  /* ON/OFF IMAGES AND TEXT ... in future, rewrite w more elegant code */
   #deadImg{
     border-radius: 20px;
     position: absolute;
@@ -198,7 +202,7 @@
     cursor: pointer;
   }
   
-  .hoverText{
+  .hoverText{ /* white stroke on black text */
     position: absolute;
     display: none;
     transition: all 0.5s;
@@ -218,6 +222,7 @@
     display: block;
   } 
 
+/* TYPEWRITING EFFECT  */
  .typew{
     margin: 0 auto;
     border-right: .15em solid rgba(255,255,255,.75);
@@ -238,13 +243,11 @@
   50% { border-color: orange; }
   }
 
-.disappear {
+/* not sure what this was for tbh */
+/* .hide {
     -moz-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Firefox */
     -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Safari and Chrome */
     -o-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Opera */
     animation: cssAnimation 0s ease-in 5s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -262,4 +265,22 @@
         height:0;
         visibility:hidden;
     }
+} */
+
+/* POP UP GIF */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50%;
+  border-radius: 15px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity ease-in-out 0.3s;
+}
+.popup.visible {
+  opacity: 1;
 }
