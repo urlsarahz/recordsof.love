@@ -275,6 +275,7 @@
   left: 0;
   height: 50%;
   border-radius: 15px;
+  z-index:99999999999999;
 
   opacity: 0;
   pointer-events: none;
