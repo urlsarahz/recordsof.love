@@ -205,7 +205,7 @@ function on() {
             let sky = document.getElementById("stuff");
             let _left = Math.random()*sky.offsetWidth;
             let _top = Math.floor(Math.random()*sky.offsetHeight);
-            let _size = Math.floor(Math.random()*10)+5;
+            let _size = Math.floor(Math.random()*20)+5;
             pic.css("position", "absolute").css("top", _top + "px").css("left", _left + "px").css("max-height", _size + "em").css("width", "auto").appendTo("#stuff");
         })
 
