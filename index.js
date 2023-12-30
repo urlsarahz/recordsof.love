@@ -196,10 +196,10 @@ function on() {
       cache: false,
       success: function (data) {
         // var pics = [];
-        // console.log(data);
+         console.log(data);
 
         $.each(data, function(val){
-            // console.log(data[val]);
+             console.log(data[val]);
             let pic = $("<img src= sky/" + data[val] + "></img>");
 
             let sky = document.getElementById("stuff");
