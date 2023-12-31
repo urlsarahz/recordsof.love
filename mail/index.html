@@ -6,15 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sarah Zhang</title>
-    <link rel="stylesheet" href="/assets/main.css" type="text/css">
+    <!-- <link rel="stylesheet" href="/assets/main.css" type="text/css"> -->
     <meta name="author" content="becoming email buddies">
     <meta name="description" content="I woud love to send you an email.">
     <link rel="icon" type="image/png" href="/favicon.ico">
     <!-- todo: add open graph, twitter card metadata -->
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        html{
+            min-height: 100%;
+            display: flex;
+            margin: 1em;
+        }
+        body{
+            margin: auto;
+        }
+        input{
+            border: 1.3px solid grey;
+            border-radius: 8px;
+            padding: 0.5em 0.4em;
+            margin: 0.3em;
+            width: 16em;
+        }
+        input[type="checkbox"]{
+            width:auto;
+        }
+        textarea{
+            border: 1.3px solid grey;
+            border-radius: 8px;
+            padding: 0.5em 0.5em;
+            margin: 0.3em;
+        }
+    </style>
 </head>
 
 <body>
-    <p>i love emails. you should email me... you know my email address, don't you?</p>
-</body>
+    <!-- <p>i love emails. you should email me... you know my email address, don't you?</p><br> -->
+    <form class="formm">
+        <label for="email">i can reach you at</label>
+        <input required type="email" id="email" name="email" placeholder="email address u check plz"><br>
 
+        <label for="name">i shall refer to you as</label>
+        <input required type="text" id="name" name="name" placeholder="ur name here, ty!"><br><br>
+
+        <label for="aboutyou">tell me about yourself! feel free to wax poetic (or dont, i guess...)</label><br>
+        <textarea required id="aboutyou" name="aboutyou" rows="5" cols="75" style="margin: 0.3em 0;" placeholder="here are some prompts if you're stumped: what do you like/dislike/hope for/dream about and why? what is your latest hobby? what's your morning routine? what's been on your mind as of late? who inspires you? what is the last thing you ate? what's your bank account number? when do you normally go to sleep? if you could be any animal, what animal would you be?"></textarea> <br>
+
+        <label for="subject">i should Specifically talk about</label>
+        <input type="text" id="subject" name="subject" placeholder="club penguin, for example"><br>
+
+        <label for="fragrance">your favorite fragance is</label>
+        <input type="text" id="fragrance" name="fragance" placeholder="rubber topnotes mmmmmmmm"><br>
+
+        <label for="buy">an item on your wishlist is</label>
+        <input type="text" id="buy" name="buy" placeholder="buybuybuybuybuy"><br>
+
+        <label for="book">your favorite book is</label>
+        <input type="text" id="book" name="book" placeholder="im a bookworm :P"><br>
+
+        <input required type="checkbox" id="tos" name="tos">
+        <label for="tos">check here to confirm you have agreed to receive heartfelt emails from sarah that may be totally enlightening and/or completely incomprehensible. </label> <br><br>
+
+        <button type="submit">submit! and become sarah's email penpal yippee!!!!!</button>
+    </form>
+
+    <!-- <div class="results">
+        <h2>Form Data</h2>
+        <pre></pre>
+    </div> -->
+
+    <!-- <p>i'll get back to you soon :-)</p> -->
+    <!-- <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            console.log(formData);
+            const formProps = Object.fromEntries(formData);
+            console.log(formProps);
+        }
+        const loginForm = document.getElementById("formm"); 
+        console.log(loginForm);
+        loginForm.addEventListener("submit", handleSubmit);
+    </script> -->
+
+    <!-- <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            const formJSON = Object.fromEntries(data.entries());
+            const results = document.querySelector('.results pre');
+            results.innerText = JSON.stringify(formJSON, null, 2);
+        }
+
+        const form = document.querySelector('.formm');
+        form.addEventListener('submit', handleFormSubmit);
+    </script> -->
+</body>
 </html>
