@@ -102,7 +102,7 @@
       display: -webkit-flex;
       display: -moz-box;
     flex-direction: row;
-    overscroll-behavior:none;
+    /* overscroll-behavior:none; */
   }
   img{
     width: 100%;
