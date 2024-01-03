@@ -1,3 +1,10 @@
+<!-- <form method="POST" action="https://script.google.com/macros/s/AKfycbzDC0Uq4vJmmgOotYF3FnAE1fZdq6juBYl--Kw8iuwf9eeFcUkIRBGfqmk_R-iFXYsc/exec">
+    <input name="Email" type="email" placeholder="Email" required>
+    <input name="Name" type="text" placeholder="Name" required>
+    <input name="Test" type="text" placeholder="test">
+    <button type="submit">Send</button>
+</form> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,13 +50,12 @@
 </head>
 
 <body>
-    <!-- <p>i love emails. you should email me... you know my email address, don't you?</p><br> -->
-    <form class="formm">
-        <label for="email">i can reach you at</label>
-        <input required type="email" id="email" name="email" placeholder="email address u check plz"><br>
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbwHm3dKhJ3dpDy4RihveDs39ZyQla2Un-o033kou8phu3CeuO6mauJnCd_NsvYV8Rr1/exec">
+        <label for="Email">i can reach you at</label>
+        <input required type="email" id="Email" name="Email" placeholder="email address u check plz"><br>
 
-        <label for="name">i shall refer to you as</label>
-        <input required type="text" id="name" name="name" placeholder="ur name here, ty!"><br><br>
+        <label for="Name">i shall refer to you as</label>
+        <input required type="text" id="Name" name="Name" placeholder="ur name here, ty!"><br><br>
 
         <label for="aboutyou">tell me about yourself! feel free to wax poetic (or dont, i guess...)</label><br>
         <textarea required id="aboutyou" name="aboutyou" rows="5" cols="75" style="margin: 0.3em 0;" placeholder="here are some prompts if you're stumped: what do you like/dislike/hope for/dream about and why? what is your latest hobby? what's your morning routine? what's been on your mind as of late? who inspires you? what is the last thing you ate? what's your bank account number? when do you normally go to sleep? if you could be any animal, what animal would you be?"></textarea> <br>
@@ -66,42 +72,10 @@
         <label for="book">your favorite book is</label>
         <input type="text" id="book" name="book" placeholder="im a bookworm :P"><br>
 
-        <input required type="checkbox" id="tos" name="tos">
+        <input required type="checkbox" id="tos">
         <label for="tos">check here to confirm you have agreed to receive heartfelt emails from sarah that may be totally enlightening and/or completely incomprehensible. </label> <br><br>
 
         <button type="submit">submit! and become sarah's email penpal yippee!!!!!</button>
     </form>
-
-    <!-- <div class="results">
-        <h2>Form Data</h2>
-        <pre></pre>
-    </div> -->
-
-    <!-- <p>i'll get back to you soon :-)</p> -->
-    <!-- <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            console.log(formData);
-            const formProps = Object.fromEntries(formData);
-            console.log(formProps);
-        }
-        const loginForm = document.getElementById("formm"); 
-        console.log(loginForm);
-        loginForm.addEventListener("submit", handleSubmit);
-    </script> -->
-
-    <!-- <script>
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const data = new FormData(event.target);
-            const formJSON = Object.fromEntries(data.entries());
-            const results = document.querySelector('.results pre');
-            results.innerText = JSON.stringify(formJSON, null, 2);
-        }
-
-        const form = document.querySelector('.formm');
-        form.addEventListener('submit', handleFormSubmit);
-    </script> -->
 </body>
 </html>
