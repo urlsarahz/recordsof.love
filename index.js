@@ -155,19 +155,24 @@ function on() {
     clear(ctx,oc,fc);
     document.getElementById("drawCloud").style.display="none";
     document.getElementById("form").style.display="none";
-  
+    
     loadCloud();
     loadPics();
     }
-  
+    
+
     function loadCloud() {
+    // DISSIPATE TEXT 
+    let reveal = prompt("a cloud is formed, and let go. perhaps it carries a secret wish you will actualize, or a worry you will release. what does your cloud hold?")
+    localStorage.setItem("cloudText", reveal);
+  
     // LOAD CLOUD
     var dataURL = localStorage.getItem('newCloud');
     ccloud = document.getElementById('userCloud');
     ccloud.src = dataURL;
     ccloud.style.position = 'absolute';
     ccloud.style.top = (document.body.clientHeight - ccloud.height - 200) * Math.random() + "px";
-    ccloud.style.left = 50;
+    ccloud.style.left = 10;
     // ccloud.style.display="block";
   
     // MOVE
