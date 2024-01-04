@@ -65,8 +65,17 @@
             <button id="form" onclick="formCloud()">form cloud</button>
             <br><p class="hoverText center typew" style="display: block;">the past can't be changed,  but it fades away as new memories are formed.</p></div>
 
-            <div>
-                <!-- drawn images as index  , display: none until cloud sent .... if viewport smaller than xxx go directly here ... maybe make a ./home page?-->
+            <div id="redirect" style="display: none;">
+               <img src="./assets/indexArtBook.png" usemap="#ArtBook">
+               <map name="ArtBook">
+                <area shape="rect" coords="50,50,130,120" href="/gallery/"> <!--trad art portfolio-->
+                <area shape="rect" coords="150,180,250,240" href="/sarah/"> <!--concrete poem or interactive lit-->
+               </map>
+
+               <img src="./assets/indexMail.png" usemap="#Mail" style="width: 50%;">
+               <map name="Mail">
+                <area shape="rect" coords="0,0,172,170.77" href="/mail/" target="_blank">
+               </map>
             </div>
 </div>
 

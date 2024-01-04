@@ -149,22 +149,26 @@ function on() {
     if (!(pixelBuffer.some(color => color !== 0))) return;
   
     localStorage.setItem("newCloud", canvas.toDataURL());
-  
-    // CLEAR CANVAS
-      document.getElementById("settings").style.display="none"; 
-    clear(ctx,oc,fc);
-    document.getElementById("drawCloud").style.display="none";
-    document.getElementById("form").style.display="none";
     
+    newSidebar();
     loadCloud();
     loadPics();
     }
-    
+  
+  function newSidebar() {
+    // CLEAR CANVAS
+    document.getElementById("settings").style.display="none"; 
+    clear(ctx,oc,fc);
+    document.getElementById("drawCloud").style.display="none";
+    document.getElementById("form").style.display="none";
+    // SHOW REDIRECT IMGS
+    document.getElementById("redirect").style.display="block";
+  }
 
-    function loadCloud() {
+  function loadCloud() {
     // DISSIPATE TEXT 
     let reveal = prompt("a cloud is formed, and let go. perhaps it carries a secret wish you will actualize, or a worry you will release. what does your cloud hold?")
-    localStorage.setItem("cloudText", reveal);
+    localStorage.setItem("cloudText", reveal); //later add text to screen
   
     // LOAD CLOUD
     var dataURL = localStorage.getItem('newCloud');
@@ -234,7 +238,7 @@ function on() {
     });
   
 
-// wave gif
+// me gif
 function appear(event, querySelector) {
   const element = document.querySelector(querySelector);
   element.classList.add("visible");
