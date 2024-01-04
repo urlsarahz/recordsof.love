@@ -229,16 +229,17 @@ function on() {
 //       });
    }
 
-    // $('.typew').fadeOut(20000); 
+// $('.typew').fadeOut(20000); 
 
-    $(window).on('load resize',function(){
-        if($(window).width() < 950){
-            window.location = "https://recordsof.love/home";
-        }
-    });
+// REDIRECT TO /HOME ON MOBILE
+$(window).on('load resize',function(){
+    if($(window).width() < 950){
+        window.location = "https://recordsof.love/home";
+    }
+});
   
 
-// me gif
+// SARAH ZHANG GIF
 function appear(event, querySelector) {
   const element = document.querySelector(querySelector);
   element.classList.add("visible");
