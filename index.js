@@ -163,6 +163,9 @@ function on() {
     document.getElementById("form").style.display="none";
     // SHOW REDIRECT IMGS
     document.getElementById("redirect").style.display="block";
+
+    //SHOW SKYBG IMG
+    document.getElementById("skybg").style.display="block";
   }
 
   function loadCloud() {
