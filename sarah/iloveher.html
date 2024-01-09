@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>loved me</title>
+    <link rel="stylesheet" href="sarah.css" type="text/css">
+    <meta name="author" content="Sarah Zhang 📂">
+    <meta name="description" content="about someone named sarah">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="index.js"></script>
+
+    <style>
+        html, body{
+            margin: 0;
+            height: 100%;
+        }
+        #bgimg {
+            min-height:100%;
+            max-width:100%;
+            height:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="assets/fruits.png" id="bgimg">
+    <div class="words">love her enough?</div>
+
+    <script type="text/javascript">
+        function str(arr) {
+            return arr[Math.floor((Math.random()*arr.length))];
+        } 
+        $(document).ready(function(){
+            let arr = ["love", "her", "enough"];
+            $(".words").html(str(arr));
+        });
+        $(document).click(function(){
+            function pop(){
+            let t = randInt(0, window.screen.height);
+            let l = randInt(0, window.screen.width);
+            let title = "loved me " + Math.floor(Math.random() * 10000);
+            window.open("iloveher.html", title,"left=" + l + "px , top=" + t + "px , width=200, height=200");
+            }
+            pop(); 
+            pop();
+            pop();
+        });
+    </script>
+</body>
+</html>

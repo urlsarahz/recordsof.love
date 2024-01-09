@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>eternity</title>
+    <link rel="stylesheet" href="sarah.css" type="text/css">
+    <meta name="author" content="Sarah Zhang 📂">
+    <meta name="description" content="about someone named sarah">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+
+    <style>
+        span {
+            color: var(--pink);
+            opacity: 1;
+            cursor: cell;
+        }
+        span:hover {
+            color: var(--pink);
+        }
+    </style>
+</head>
+
+<body onload="startTime()">
+    <img src="assets/flare.jpg" id="bg" class="center">
+    <div class="words">with each passing <span data-values="day,hour,minute,second">day</span>.</div>
+    <div id="time" class="center"></div>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script type="text/javascript">
+    $("#time").click(function(){
+        window.open("mother.html", "i had loved and hated her my whole life.", "height=" +screen.availHeight + ",width=" + screen.availWidth)
+    });
+
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+
+    document.addEventListener( "click", function toggleWords ( event ) {
+    // A few variables to help us track important values/references
+    var target = event.target, values = [], placed;
+    // If the clicked element has multiple values
+    if ( target.hasAttribute( "data-values" ) ) {
+        // Split those values out into an array
+        values = target.getAttribute( "data-values" ).split( "," );
+        // Find the location of its current value in the array
+        // IE9+ (Older versions supported by polyfill: http://goo.gl/uZslmo)
+        placed = values.indexOf( target.textContent );
+        // Set its text to be the next value in the array
+        target.textContent = values[ ++placed % values.length ];   
+    }
+});
+</script>
+</script>
+</body>
+</html>

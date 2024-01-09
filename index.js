@@ -230,6 +230,9 @@ function on() {
       
 //         $( "#stuff" ).append( items );
 //       });
+
+    // CHANGE PSA LINK
+    document.getElementById("psaLink").style.opacity="1";
    }
 
 // $('.typew').fadeOut(20000); 

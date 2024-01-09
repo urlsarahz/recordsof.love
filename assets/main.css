@@ -263,6 +263,12 @@
     display: block;
   } 
 
+  #psaLink {opacity: 0;}
+
+  #psaLink:hover {
+    opacity:1;
+  }
+
 /* TYPEWRITING EFFECT  */
  .typew{
     margin: 0 auto;

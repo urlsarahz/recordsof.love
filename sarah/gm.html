@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>love,</title>
+    <link rel="stylesheet" href="sarah.css" type="text/css">
+    <meta name="author" content="Sarah Zhang 📂">
+    <meta name="description" content="about someone named sarah">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <style>
+        #ctr {
+            height: 100vh;
+            display: grid;
+            top: 50%;
+            left: 50%;            
+        }
+        .bx {
+            color: var(--pink);
+            text-shadow: var(--black) 0px 0 8px;
+
+            display: flex; /* flex */
+            margin: 2.5px;
+            padding: 4px;
+            transition: 0.5s;
+            text-align: center;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
+        #imgs {
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            z-index: 9;
+        }
+
+        .i {
+            margin: 5%;
+            
+            min-height: 100px; 
+            width: 90%;
+            overflow: hidden;
+        }
+
+        img {
+            width:100%;
+            min-height:500px;
+            cursor: cell;
+        }
+    </style>
+</head>
+
+<body style="position: relative;">
+    <!-- <img src="assets/awake.jpg" id="bg"> -->
+    <video autoplay muted loop id="vid" style="opacity: 1;"><source src="assets/trees.mov"></video>
+    <div id="ctr">
+        <div class="bx">until i creep into the kitchen,</div>
+        <div class="bx">turn on the sink faucet,</div>
+        <div class="bx">hear her greeting me from her bedroom.</div>
+    </div>
+    <div id="imgs">
+        <div class="i"><img src="assets/lychee.jpg"></div>
+        <div class="i"><img src="assets/aquarium.jpg" style="left:10%"></div>
+        <div class="i"><img src="assets/covers.jpg"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript">
+        document.querySelector('video').defaultPlaybackRate = 2.0;
+        var flag = 0;
+        $(".i").click(function(){
+            $(this).css("opacity", "0");
+            flag++;
+        });
+        $("body").click(function(){
+            if (flag == 4){
+                let l = window.screen.width/16;
+                let t = window.screen.height/3;
+                window.open("devotion.html", "it was never a choice", "left="+l+"px, top=" +t+"px,width=225, height = 400");
+            }
+        });
+    </script>
+</body>
+</html>

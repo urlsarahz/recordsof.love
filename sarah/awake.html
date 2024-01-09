@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>awake</title>
+    <link rel="stylesheet" href="sarah.css" type="text/css">
+    <meta name="author" content="Sarah Zhang 📂">
+    <meta name="description" content="about someone named sarah">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <style>
+        #bg{ /* change later */
+            position:absolute;
+            top:-200px;
+            left:-100px;
+        }
+        #first {
+            position: fixed;
+            top:175px;
+        }
+        #second {
+            position:fixed;
+            top:600px;
+        }
+        /* a .hov {
+            opacity: 0;
+            transition: opacity ease-in-out 1s;
+        }
+
+        a:hover .hov { 
+            position: absolute;
+            opacity: 1; 
+            top: -200px;
+            width: 200px;
+            height: 200px;
+        }
+        video{
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="imgwrapper" style="position: relative;">    <img src="assets/awake.jpg" id="bg"></div>
+    <div class="words" id="first">do i love my <input type="checkbox" id="mom"><label for="mom">mother </label><p toggle>purportedly the person i love most of all in the world</p><p id="triggerText">enough</p></div>
+
+    <div class="words" id="second">to give up a morning in bed to <a id="water">boil the water</a> <br>and <a id="breakfast">cook breakfast</a> so she doesn’t have to?</div>
+
+    <!-- <div> <input type="checkbox" id="bypass"><label for="bypass" style="font-size: x-small; color:pink">☀️</label><p toggle>if it's a clear day <a href="home/">... click me!</a></p></div> -->
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<!-- <script src="js/jquery-ui-1.8.16.custom.min.js" type="type/javascript"></script> -->
+<!-- <script src="js/ui/jquery.ui.draggable.js" type="type/javascript"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script> -->
+
+<script type="text/javascript">
+    // window resize and cursor
+    $("#triggerText").hover(function() {
+        if (window.outerHeight < 750) {
+            $(this).css('cursor','cell');
+        }
+        else {
+            $(this).css('cursor','crosshair');
+        }
+    });
+    $("#triggerText").click(function(){
+        if (window.innerHeight < 750) {window.resizeTo(600,800);}  
+    });
+
+    $("#water").click(function(){
+        let l = window.screen.width/8 + 75;
+        let t = window.screen.height/2 - 100;
+        window.open("doi.html", "but she always", "left="+l+"px, top=" +t+"px, width=200, height=125");
+    });
+    $("#breakfast").click(function(){
+        let l = window.screen.width/3;
+        let t = window.screen.height/2-100;
+        window.open("loveherenough.html", "", "left="+l+"px, top=" +t+"px, width=200, height=200")
+    });
+</script>
+</body>
+</html>
