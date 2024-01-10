@@ -48,6 +48,7 @@ span {
 span:hover{
     opacity: 0.8; 
     color: var(--green);
+    text-shadow: 0 0 10px var(--green);
     transition: opacity 0.2s;
 }
 
@@ -56,6 +57,7 @@ span:hover{
 }
 .info:hover {
     color: var(--blue);
+    text-shadow: 0 0 10px var(--blue);
     opacity: 0.5;
 }
 
@@ -168,3 +170,17 @@ padding: 0 2em;
     #mobile{
       display: flex;
 }}
+
+footer {
+    display: inline-block;
+    position: fixed;
+    font-size: 15px;
+    color: var(--white);
+    text-shadow: 0 0 5px var(--blue);
+    bottom: 0.2em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999999999999;
+  }
+
+  
